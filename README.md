@@ -1,7 +1,7 @@
 # Stickman
 Stickman game
 
-Small stickman game as a school project.
+Small stickman game as a school project. (Tom Mingneau PXL)
 
 Current build : 
 
