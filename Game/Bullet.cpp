@@ -4,15 +4,16 @@
 #include <QList>
 #include <Enemy.h>
 
-Bullet::Bullet(){
+
+Bullet::Bullet(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent){
     // drew bullet
-    setRect(0,0,10,10);
+    setPixmap(QPixmap(":/bullet.png")); //bullet = image
 
     // connect
     QTimer * timer = new QTimer();
     connect(timer,SIGNAL(timeout()), this, SLOT(move()));
 
-    timer->start(50); //every 50 ms timeout will be emited - bullet will move
+    timer->start(50); //every 50 ms timeout will be emitted - bullet will move
 
 }
 

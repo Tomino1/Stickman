@@ -1,17 +1,18 @@
 #include "Enemy.h"
 #include <QTimer>
 #include <QGraphicsScene>
+#include <QGraphicsPixmapItem>
 #include <QList>
 #include <stdlib.h> //rand()
 
-Enemy::Enemy() : QObject(), QGraphicsRectItem(){
+Enemy::Enemy() : QObject(), QGraphicsPixmapItem(){
 
     //set random position
 
-    setPos(800,500);
+    setPos(800,535);
 
     // drew Enemy
-    setRect(0,0,100,100);
+    setPixmap(QPixmap(":/enemy.png"));
 
     // connect
     QTimer * timer = new QTimer();

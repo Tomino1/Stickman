@@ -3,7 +3,11 @@
 #include "MyRect.h"
 #include <QGraphicsView>
 #include <QTimer>
+#include "Stickmandrawing.h"
+#include <QObject>
 #include <Game.h>
+#include <QGraphicsPathItem>
+
 
 
 Game :: Game(QWidget *parent){
@@ -13,7 +17,10 @@ QGraphicsScene * scene = new QGraphicsScene();
 
 // create item into scene
 MyRect * player = new MyRect();
-player -> setRect(0,0,100,100);
+player -> setPixmap(QPixmap(":/shooting.png"));
+
+
+// add stickman to scene
 
 // add item to the scene
 scene -> addItem(player);
@@ -32,8 +39,7 @@ view->setHorizontalScrollBarPolicy(Qt :: ScrollBarAlwaysOff);
 view->setVerticalScrollBarPolicy(Qt :: ScrollBarAlwaysOff);
 
 scene->setSceneRect(0,0,800,600);
-player ->setPos(view->width()/2, (view->height())-100);
-
+player ->setPos(view->width()/2, (view->height())-60);
 //spawn enemies
 QTimer * timer = new QTimer();
 QObject::connect(timer,SIGNAL(timeout()), player, SLOT(spawn()));

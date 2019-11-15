@@ -5,6 +5,7 @@
 #include <QWidget>
 #include <QGraphicsScene>
 #include <MyRect.h>
+#include <Stickmandrawing.h>
 
 class Game: public QGraphicsView{
 public:
@@ -12,6 +13,7 @@ public:
     Game(QWidget * parent=0);
 
     MyRect * Player;
+    stickman * Player1;
 
 };
 

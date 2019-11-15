@@ -3,6 +3,7 @@
 #include <QKeyEvent>
 #include "Bullet.h"
 #include "Enemy.h"
+#include "QGraphicsItem"
 
 void MyRect::keyPressEvent(QKeyEvent *event)
 {
@@ -20,7 +21,7 @@ void MyRect::keyPressEvent(QKeyEvent *event)
     else if (event->key() == Qt :: Key_Space){
         //create bullet
         Bullet * bullet = new Bullet();
-        bullet -> setPos(x(),y());
+        bullet -> setPos(x()+55,y());       // bullet spawns at the end of stickmans gun
         scene() -> addItem(bullet);
     }
 }
