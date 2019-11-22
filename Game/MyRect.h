@@ -9,6 +9,7 @@ class MyRect : public QObject, public QGraphicsPixmapItem{
 
 public :
     void keyPressEvent(QKeyEvent * event);
+    MyRect(QGraphicsItem * parent=0);
 public slots :
     void spawn();
 };

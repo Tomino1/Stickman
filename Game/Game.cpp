@@ -17,7 +17,7 @@ QGraphicsScene * scene = new QGraphicsScene();
 
 // create item into scene
 MyRect * player = new MyRect();
-player -> setPixmap(QPixmap(":/shooting.png"));
+
 
 
 // add stickman to scene

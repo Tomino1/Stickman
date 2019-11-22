@@ -7,7 +7,7 @@
 
 Enemy::Enemy() : QObject(), QGraphicsPixmapItem(){
 
-    //set random position
+    //set enemy position
 
     setPos(800,535);
 

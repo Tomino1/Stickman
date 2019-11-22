@@ -4,6 +4,14 @@
 #include "Bullet.h"
 #include "Enemy.h"
 #include "QGraphicsItem"
+#include "QTimer"
+
+MyRect :: MyRect(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent){
+setPixmap(QPixmap(":/shooting.png"));
+}
+
+
+
 
 void MyRect::keyPressEvent(QKeyEvent *event)
 {
@@ -21,8 +29,19 @@ void MyRect::keyPressEvent(QKeyEvent *event)
     else if (event->key() == Qt :: Key_Space){
         //create bullet
         Bullet * bullet = new Bullet();
-        bullet -> setPos(x()+55,y());       // bullet spawns at the end of stickmans gun
+        bullet -> setPos(x()+60,y()+5);       // bullet spawns at the end of stickmans gun
         scene() -> addItem(bullet);
+    }
+    else if (event->key() == Qt :: Key_Up){
+        if (pos().y() > 0)
+            setPos(x(),y()-100);
+}
+
+        else if (event->key() == Qt :: Key_Down){
+            if (pos().y() < 540)
+                setPos(x(),y()+10);
+
+
     }
 }
 
