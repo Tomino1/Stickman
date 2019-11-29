@@ -4,16 +4,13 @@
 #include <QGraphicsView>
 #include <QWidget>
 #include <QGraphicsScene>
-#include <MyRect.h>
+#include <Player.h>
 #include <Stickmandrawing.h>
 
 class Game: public QGraphicsView{
 public:
 
     Game(QWidget * parent=0);
-
-    MyRect * Player;
-    stickman * Player1;
 
 };
 

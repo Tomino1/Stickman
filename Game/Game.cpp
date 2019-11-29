@@ -1,6 +1,6 @@
 #include <QApplication>
 #include <QGraphicsScene>
-#include "MyRect.h"
+#include "Player.h"
 #include <QGraphicsView>
 #include <QTimer>
 #include "Stickmandrawing.h"
@@ -16,7 +16,7 @@ Game :: Game(QWidget *parent){
 QGraphicsScene * scene = new QGraphicsScene();
 
 // create item into scene
-MyRect * player = new MyRect();
+Player * player = new Player();
 
 
 

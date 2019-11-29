@@ -1,6 +1,6 @@
 #include <QApplication>
 #include <QGraphicsScene>
-#include "MyRect.h"
+#include "Player.h"
 #include <QGraphicsView>
 #include <QTimer>
 #include <Game.h>

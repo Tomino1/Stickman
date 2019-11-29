@@ -1,4 +1,4 @@
-#include "MyRect.h"
+#include "Player.h"
 #include "QGraphicsScene"
 #include <QKeyEvent>
 #include "Bullet.h"
@@ -6,14 +6,14 @@
 #include "QGraphicsItem"
 #include "QTimer"
 
-MyRect :: MyRect(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent){
+Player :: Player(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent){
 setPixmap(QPixmap(":/shooting.png"));
 }
 
 
 
 
-void MyRect::keyPressEvent(QKeyEvent *event)
+void Player::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Left){
         if(pos().x() > 0)                     // player can't move off screen on the left
@@ -45,7 +45,7 @@ void MyRect::keyPressEvent(QKeyEvent *event)
     }
 }
 
-void MyRect::spawn()
+void Player::spawn()
 {
     //create enemy
     Enemy * enemy = new Enemy();

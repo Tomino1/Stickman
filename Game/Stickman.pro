@@ -19,14 +19,14 @@ SOURCES += \
     Bullet.cpp \
     Enemy.cpp \
     Game.cpp \
-    MyRect.cpp \
+    Player.cpp \
     main.cpp
 
 HEADERS += \
     Bullet.h \
     Enemy.h \
     Game.h \
-    MyRect.h
+    Player.h
 
 FORMS += \
     mainwindow.ui
