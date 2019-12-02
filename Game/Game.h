@@ -10,7 +10,8 @@
 class Game: public QGraphicsView{
 public:
 
-    Game(QWidget * parent=0);
+    Game(QWidget * parent=nullptr); //nullptr because of readability + can only be implicitly converted to pointer type
+
 
 };
 

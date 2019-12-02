@@ -2,10 +2,13 @@
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QList>
+#include <Object.h>
 #include <Enemy.h>
 
+Bullet::Bullet(QGraphicsItem *parent) {
 
-Bullet::Bullet(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent){
+    IntMove = 10;
+
     // drew bullet
     setPixmap(QPixmap(":/bullet.png")); //bullet = image
 
@@ -28,7 +31,7 @@ void Bullet::move()
             scene() -> removeItem(this);
             // delete them both
             delete colliding_items[i];
-            delete this;
+            delete this; //destructor
             return; //makes sure the code below doesn't try to run after the item is destroyed
         }
 
@@ -36,9 +39,9 @@ void Bullet::move()
     }
 
     //move bullet to the right
-    setPos(x() + 10, y());
+    setPos(x() + IntMove, y());
     if (pos().x() > 800){
         scene()->removeItem(this); //bullet gets deleted when it moves off screen
-        delete this;
+        delete this; //destructor
     }
 }

@@ -4,14 +4,15 @@
 #include <QGraphicsPixmapItem>
 #include <QGraphicsItem>
 #include <QObject>
+#include <Object.h>
 
-class Bullet : public QObject, public QGraphicsPixmapItem{
-    Q_OBJECT
+class Bullet : public Object{
 public:
-    Bullet(QGraphicsItem * parent=0);
+    Bullet(QGraphicsItem * parent=nullptr); //specific constructor
 
-public slots:
+public slots :
     void move();
+
 };
 
 #endif // BULLET_H

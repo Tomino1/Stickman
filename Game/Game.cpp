@@ -12,20 +12,21 @@
 
 Game :: Game(QWidget *parent){
 
+
+
+Player *c1= new Player();       //dynamic memory allocation
+delete c1;                      //dynamic memory removing
+
 // create scene
 QGraphicsScene * scene = new QGraphicsScene();
 
-// create item into scene
-Player * player = new Player();
-
-
-
 // add stickman to scene
+Player * player = new Player();
 
 // add item to the scene
 scene -> addItem(player);
 
-// make rect focusable
+// make stickman focusable
 player->setFlag(QGraphicsItem :: ItemIsFocusable);
 player->setFocus();
 
@@ -40,8 +41,10 @@ view->setVerticalScrollBarPolicy(Qt :: ScrollBarAlwaysOff);
 
 scene->setSceneRect(0,0,800,600);
 player ->setPos(view->width()/2, (view->height())-60);
+
 //spawn enemies
 QTimer * timer = new QTimer();
 QObject::connect(timer,SIGNAL(timeout()), player, SLOT(spawn()));
+QObject::connect(timer,SIGNAL(timeout()), this, SLOT(action()));
 timer->start(5000);
 }
