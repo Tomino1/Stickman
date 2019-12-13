@@ -19,14 +19,16 @@ SOURCES += \
     Bullet.cpp \
     Enemy.cpp \
     Game.cpp \
-    MyRect.cpp \
+    Object.cpp \
+    Player.cpp \
     main.cpp
 
 HEADERS += \
     Bullet.h \
     Enemy.h \
     Game.h \
-    MyRect.h
+    Object.h \
+    Player.h
 
 FORMS += \
     mainwindow.ui
@@ -36,6 +38,7 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-DISTFILES += \
-    Resources/Naamloos.png \
-    Resources/stickgun.png
+DISTFILES +=
+
+RESOURCES += \
+    res.qrc

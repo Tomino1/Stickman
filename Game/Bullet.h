@@ -1,16 +1,18 @@
 #ifndef BULLET_H
 #define BULLET_H
 
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
+#include <QGraphicsItem>
 #include <QObject>
+#include <Object.h>
 
-class Bullet : public QObject, public QGraphicsRectItem{
-    Q_OBJECT
+class Bullet : public Object{
 public:
-    Bullet();
+    Bullet(QGraphicsItem * parent=nullptr); //specific constructor
 
-public slots:
+public slots :
     void move();
+
 };
 
 #endif // BULLET_H

@@ -1,16 +1,26 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 #include <QObject>
+#include <Object.h>
 
-class Enemy : public QObject, public QGraphicsRectItem{
-    Q_OBJECT
-public:
-    Enemy();
+class Enemy : public Object{
 
-public slots:
+public :
+    Enemy(); //default constructor
+
+public slots :
     void move();
+
+
+
+
 };
+
+
+
+
+
 
 #endif // ENEMY_H

@@ -2,17 +2,21 @@
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QList>
+#include <Object.h>
 #include <Enemy.h>
 
-Bullet::Bullet(){
+Bullet::Bullet(QGraphicsItem *parent) {
+
+    IntMove = 10;
+
     // drew bullet
-    setRect(0,0,10,10);
+    setPixmap(QPixmap(":/bullet.png")); //bullet = image
 
     // connect
     QTimer * timer = new QTimer();
     connect(timer,SIGNAL(timeout()), this, SLOT(move()));
 
-    timer->start(50); //every 50 ms timeout will be emited - bullet will move
+    timer->start(50); //every 50 ms timeout will be emitted - bullet will move
 
 }
 
@@ -27,7 +31,7 @@ void Bullet::move()
             scene() -> removeItem(this);
             // delete them both
             delete colliding_items[i];
-            delete this;
+            delete this; //destructor
             return; //makes sure the code below doesn't try to run after the item is destroyed
         }
 
@@ -35,9 +39,9 @@ void Bullet::move()
     }
 
     //move bullet to the right
-    setPos(x() + 10, y());
+    setPos(x() + IntMove, y());
     if (pos().x() > 800){
         scene()->removeItem(this); //bullet gets deleted when it moves off screen
-        delete this;
+        delete this; //destructor
     }
 }

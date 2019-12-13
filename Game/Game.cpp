@@ -1,24 +1,36 @@
-#include <QApplication>
+"#include <QApplication>
 #include <QGraphicsScene>
-#include "MyRect.h"
+#include "Player.h"
 #include <QGraphicsView>
 #include <QTimer>
+#include "Stickmandrawing.h"
+#include <QObject>
 #include <Game.h>
+#include <QGraphicsPathItem>
+
 
 
 Game :: Game(QWidget *parent){
 
+ bool life_player;
+ bool life_enemy;
+ bool game_over;
+ bool game_started;
+
+
+Player *c1= new Player();       //dynamic memory allocation
+delete c1;                      //dynamic memory removing
+
 // create scene
 QGraphicsScene * scene = new QGraphicsScene();
 
-// create item into scene
-MyRect * player = new MyRect();
-player -> setRect(0,0,100,100);
+// add stickman to scene
+Player * player = new Player();
 
 // add item to the scene
 scene -> addItem(player);
 
-// make rect focusable
+// make stickman focusable
 player->setFlag(QGraphicsItem :: ItemIsFocusable);
 player->setFocus();
 
@@ -32,10 +44,11 @@ view->setHorizontalScrollBarPolicy(Qt :: ScrollBarAlwaysOff);
 view->setVerticalScrollBarPolicy(Qt :: ScrollBarAlwaysOff);
 
 scene->setSceneRect(0,0,800,600);
-player ->setPos(view->width()/2, (view->height())-100);
+player ->setPos(view->width()/2, (view->height())-60);
 
 //spawn enemies
 QTimer * timer = new QTimer();
 QObject::connect(timer,SIGNAL(timeout()), player, SLOT(spawn()));
+QObject::connect(timer,SIGNAL(timeout()), this, SLOT(action()));
 timer->start(5000);
 }
