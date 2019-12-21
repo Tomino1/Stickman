@@ -21,6 +21,7 @@ SOURCES += \
     Game.cpp \
     Object.cpp \
     Player.cpp \
+    Score.cpp \
     main.cpp
 
 HEADERS += \
@@ -28,7 +29,8 @@ HEADERS += \
     Enemy.h \
     Game.h \
     Object.h \
-    Player.h
+    Player.h \
+    Score.h
 
 FORMS += \
     mainwindow.ui

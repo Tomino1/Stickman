@@ -1,4 +1,4 @@
-"#include <QApplication>
+#include <QApplication>
 #include <QGraphicsScene>
 #include "Player.h"
 #include <QGraphicsView>
@@ -7,8 +7,8 @@
 #include <QObject>
 #include <Game.h>
 #include <QGraphicsPathItem>
-
-
+#include <Score.h>
+#include <QGraphicsTextItem>
 
 Game :: Game(QWidget *parent){
 
@@ -16,7 +16,6 @@ Game :: Game(QWidget *parent){
  bool life_enemy;
  bool game_over;
  bool game_started;
-
 
 Player *c1= new Player();       //dynamic memory allocation
 delete c1;                      //dynamic memory removing
