@@ -14,8 +14,6 @@ Enemy::Enemy() {
 
 IntMove = 20;
 
-
-
 setPos(800,535);
 // drew Enemy
 setPixmap(QPixmap(":/enemy.png"));

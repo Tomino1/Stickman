@@ -19,6 +19,8 @@ Game :: Game(QWidget *parent){
 
 Player *c1= new Player();       //dynamic memory allocation
 delete c1;                      //dynamic memory removing
+Player *c2 = new Player();
+delete c2;
 
 // create scene
 QGraphicsScene * scene = new QGraphicsScene();
