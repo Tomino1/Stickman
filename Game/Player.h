@@ -8,16 +8,15 @@
 class Player : public Object{
     Q_OBJECT
 
+    unsigned char a;
+
 public :
     void keyPressEvent(QKeyEvent * event);
     Player(QGraphicsItem * parent=nullptr); //specific constructor
     ~Player();
 
-    int a,b;
-    char s;
-
-    Player(int a, int b); //2 specific constructors
-    Player(int b, char s);
+    Player(unsigned char b, unsigned char c); //2 specific constructors
+    Player(unsigned char d);
 
 
 

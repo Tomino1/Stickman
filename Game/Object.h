@@ -7,9 +7,9 @@
 class Object : public QObject, public QGraphicsPixmapItem{ //abstract base class & multiple inheritance
     Q_OBJECT
 
-public:
-    int IntMove; //useful
+public :
     Object(); //default constructor
+    unsigned char IntMove; //useful
 
 public slots:
     virtual void move() = 0;

@@ -9,7 +9,6 @@
 class Bullet : public Object{
 public:
     Bullet(QGraphicsItem * parent=nullptr); //specific constructor
-
 public slots :
     void move();
 

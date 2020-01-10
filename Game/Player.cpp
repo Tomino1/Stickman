@@ -11,18 +11,14 @@
 Player :: ~Player() //destructor
 {}
 
-Player :: Player(QGraphicsItem *parent){
+Player :: Player(QGraphicsItem *parent):a {5}{ //member initialization in constructor
 setPixmap(QPixmap(":/shooting.png"));
-
     IntMove = 5;
     // connect
     QTimer * timer = new QTimer();
     connect(timer,SIGNAL(timeout()), this, SLOT(move()));
 
-    timer->start(20); //every 20 ms timeout will be emited - Player falls
-
-
-
+    timer->start(10); //every 20 ms timeout will be emited - Player falls
 }
 
 void Player :: move(){
@@ -61,8 +57,6 @@ void Player::keyPressEvent(QKeyEvent *event)
         else if (event->key() == Qt :: Key_Down){
             if (pos().y() < 540)
                 setPos(x(),y()+10);
-
-
     }
 }
 
@@ -71,5 +65,6 @@ void Player::spawn() //moet in game staan
     //create enemy
    Enemy * enemy = new Enemy(); // dynamic memory allocation
    scene() ->addItem(enemy);
+
 }
 
